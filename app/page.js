@@ -10,7 +10,7 @@ export default function Home() {
   const [search,setsearch] = useState(false);
 
   useEffect(()=>{
-    fetch(process.env.NEXT_PUBLIC_API_URL+'/posts')
+    fetch(process.env.NEXT_PUBLIC_API_URL+'/api/posts')
     .then((res)=>res.json())
     .then(res => setposts(res));
   },[]);
@@ -21,7 +21,7 @@ export default function Home() {
       return;
     }
     setsearch(true)
-    fetch(process.env.NEXT_PUBLIC_API_URL+'/posts?q='+inputRef.current.value)
+    fetch(process.env.NEXT_PUBLIC_API_URL+'/api/posts?q='+inputRef.current.value)
     .then((res)=>res.json())
     .then(res => setposts(res))
     .finally(()=>setsearch(false))

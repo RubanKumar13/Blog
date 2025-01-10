@@ -7,7 +7,7 @@ export default function Post({params}) {
      const id = params.id;
      const [post,setpost] = useState(null);
      useEffect(()=>{
-        fetch(process.env.NEXT_PUBLIC_API_URL+'/post/'+id)
+        fetch(process.env.NEXT_PUBLIC_API_URL+'/api/post/'+id)
         .then(res => res.json())
         .then(res => setpost(res))
      },[])

@@ -14,7 +14,7 @@ export default function Contact() {
 
   const handlesubmit = (e) => {
     e.preventDefault();
-    fetch(process.env.NEXT_PUBLIC_API_URL + "/enquiry", {
+    fetch(process.env.NEXT_PUBLIC_API_URL + "/api/enquiry", {
       method: "POST",
       body: JSON.stringify(inputs),
     })
